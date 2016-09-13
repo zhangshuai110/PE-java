@@ -1,5 +1,7 @@
 package com.lean.project.euler.euler0002;
-
+/*
+ * 这样写有点儿繁琐，代码可以简化
+ */
 public class Main2 {
 
 	public static void main(String[] args) {
