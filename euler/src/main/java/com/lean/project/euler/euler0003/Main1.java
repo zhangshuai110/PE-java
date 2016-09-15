@@ -6,7 +6,19 @@ package com.lean.project.euler.euler0003;
 public class Main1 {
 
 	public static void main(String[] args) {
-		long n = 600851475143l;
+		// for (long i = 1; i < 600851475143l; i++) {
+		// System.out.println(i + " .......");
+		// System.out.println(findGreadPrime(i));
+		// }
+		System.out.println(findGreadPrime(600851475143l));
+	}
+
+	/**
+	 * 找出最大的质因数
+	 * 
+	 * @param i
+	 */
+	private static long findGreadPrime(long n) {
 		long fristPrime = 2;
 		long r = 2;
 		do {
@@ -15,15 +27,17 @@ public class Main1 {
 			if (fristPrime > r) {
 				r = fristPrime;
 			}
+			if (n == 1) {
+				break;
+			}
 			if (isPrimeNum(n)) {
 				if (n > r) {
 					r = n;
-				}	
+				}
 				break;
 			}
 		} while (true);
-
-		System.out.println(r);
+		return r;
 	}
 
 	/**
