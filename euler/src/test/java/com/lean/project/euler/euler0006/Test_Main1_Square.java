@@ -1,4 +1,4 @@
-package com.lean.project.euler;
+package com.lean.project.euler.euler0006;
 
 import org.testng.annotations.Test;
 
