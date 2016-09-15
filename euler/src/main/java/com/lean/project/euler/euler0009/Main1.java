@@ -3,7 +3,14 @@ package com.lean.project.euler.euler0009;
 public class Main1 {
 
 	public static void main(String[] args) {
-
+		for (int a = 0; a < 1000; a++) {
+			for (int b = 0; b < 1000; b++) {
+				int c = 1000 - a - b;
+				if (Main1.checkTripet(a, b, c)) {
+					System.out.println(a * b * c);
+				}
+			}
+		}
 	}
 
 	/**
