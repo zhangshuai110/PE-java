@@ -6,7 +6,7 @@ import com.lean.project.euler.euler0006.Main1;
 
 import junit.framework.Assert;
 
-public class Test_Main1_Square {
+public class Test_Main1_SumSquare {
 	@Test
 	public void testSquareSum0() {
 		long num = 0;
