@@ -7,6 +7,20 @@ public class Main1 {
 	}
 
 	/**
+	 * 计算num的和平方
+	 * 
+	 * @param num
+	 * @return
+	 */
+	public static long sumSquare(long num) {
+		long r = 0;
+		for (int i = 1; i <= num; i++) {
+			r += i;
+		}
+		return r * r;
+	}
+
+	/**
 	 * 计算1到num的平方和
 	 * 
 	 * @param num
