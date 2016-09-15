@@ -18,5 +18,6 @@ public class Test_main1_findSeriesNum {
 		Assert.assertEquals("31", Main1.findSeriesNum(source, 2, 2));
 		Assert.assertEquals("16", Main1.findSeriesNum(source, 2, 3));
 		Assert.assertEquals("1671", Main1.findSeriesNum(source, 4, 3));
+		Assert.assertEquals("4934", Main1.findSeriesNum(source, 4, 47));
 	}
 }
