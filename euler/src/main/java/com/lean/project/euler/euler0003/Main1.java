@@ -62,7 +62,7 @@ public class Main1 {
 	 * @param number
 	 * @return
 	 */
-	private static boolean isPrimeNum(long number) {
+	public static boolean isPrimeNum(long number) {
 		if (number <= 0) {
 			return false;
 		}
