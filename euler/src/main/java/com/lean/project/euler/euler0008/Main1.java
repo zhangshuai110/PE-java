@@ -8,7 +8,7 @@ public class Main1 {
 		String targetString = null;
 		int count = 1;
 		while (true) {
-			targetString = Main1.findSeriesNum(source, 4, count++);
+			targetString = Main1.findSeriesNum(source, 13, count++);
 			if (targetString == null) {
 				break;
 			}
