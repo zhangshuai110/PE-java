@@ -3,7 +3,7 @@ package com.lean.project.euler.euler0006;
 public class Main1 {
 
 	public static void main(String[] args) {
-
+		System.out.println(sumSquare(100) - squareSum(100));
 	}
 
 	/**
