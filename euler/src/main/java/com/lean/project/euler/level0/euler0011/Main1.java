@@ -98,7 +98,7 @@ public class Main1 {
 			}
 		}
 
-		// // 从右到左
+		// 从右到左
 		for (int i = 0; i < matrix.length; i++) {
 			exString = "";
 			exStringStep = 0;
@@ -111,6 +111,46 @@ public class Main1 {
 				if (exStringStep == step) {
 					j = countBack--;
 
+					if (++exCount == count) {
+						return exString;
+					}
+					exString = "";
+					exStringStep = 0;
+				}
+			}
+		}
+		// 从左上到右下1 下半部分
+		for (int x = 0; x < matrix.length; x++) {
+			exString = "";
+			exStringStep = 0;
+			int countBack = 0;
+			for (int i = x, j = 0; j < matrix[0].length && i < matrix.length; i++, j++) {
+				exString += matrix[i][j];
+				exString += ",";
+				exStringStep++;
+				if (exStringStep == step) {
+					i = x + countBack;
+					j = countBack++;
+					if (++exCount == count) {
+						return exString;
+					}
+					exString = "";
+					exStringStep = 0;
+				}
+			}
+		}
+		// 从左上到右下2 上半部分
+		for (int x = 1; x < matrix[0].length; x++) {
+			exString = "";
+			exStringStep = 0;
+			int countBack = 0;
+			for (int i = 0, j = x; j < matrix[0].length && i < matrix.length; i++, j++) {
+				exString += matrix[i][j];
+				exString += ",";
+				exStringStep++;
+				if (exStringStep == step) {
+					i = countBack;
+					j = x + countBack++;
 					if (++exCount == count) {
 						return exString;
 					}
