@@ -231,34 +231,89 @@ public class Test_eraodicMatrix {
 	public void test_eraodicMatrix7() {
 		int[][] testMatrix = { { 1, 2, 3, 4, 5, 6 }, { 7, 8, 9, 10, 11, 12 }, { 13, 14, 15, 16, 17, 18 } };
 		String r1 = Main1.ergodicMatrix(testMatrix, 2, 55);
-		Assert.assertEquals(r1, "1,8,", "6r1 : ");
+		Assert.assertEquals(r1, "1,8,", "7r1 : ");
 
 		String r2 = Main1.ergodicMatrix(testMatrix, 2, 56);
-		Assert.assertEquals(r2, "8,15,", "6r2 : ");
+		Assert.assertEquals(r2, "8,15,", "7r2 : ");
 
 		String r3 = Main1.ergodicMatrix(testMatrix, 2, 57);
-		Assert.assertEquals(r3, "7,14,", "6r3 : ");
-
+		Assert.assertEquals(r3, "7,14,", "7r3 : ");
+		// 上半部分测试
 		String r4 = Main1.ergodicMatrix(testMatrix, 2, 58);
-		Assert.assertEquals(r4, "2,9,", "6r4 : ");
+		Assert.assertEquals(r4, "2,9,", "7r4 : ");
 
 		String r5 = Main1.ergodicMatrix(testMatrix, 2, 59);
-		Assert.assertEquals(r5, "9,16,", "6r5 : ");
+		Assert.assertEquals(r5, "9,16,", "7r5 : ");
 
 		String r6 = Main1.ergodicMatrix(testMatrix, 2, 60);
-		Assert.assertEquals(r6, "3,10,", "6r6 : ");
+		Assert.assertEquals(r6, "3,10,", "7r6 : ");
 
 		String r7 = Main1.ergodicMatrix(testMatrix, 2, 61);
-		Assert.assertEquals(r7, "10,17,", "6r7 : ");
+		Assert.assertEquals(r7, "10,17,", "7r7 : ");
 
 		String r8 = Main1.ergodicMatrix(testMatrix, 2, 62);
-		Assert.assertEquals(r8, "4,11,", "6r8 : ");
+		Assert.assertEquals(r8, "4,11,", "7r8 : ");
 
 		String r9 = Main1.ergodicMatrix(testMatrix, 2, 63);
-		Assert.assertEquals(r9, "11,18,", "6r9 : ");
+		Assert.assertEquals(r9, "11,18,", "7r9 : ");
 
 		String r10 = Main1.ergodicMatrix(testMatrix, 2, 64);
-		Assert.assertEquals(r10, "5,12,", "6r10 : ");
+		Assert.assertEquals(r10, "5,12,", "7r10 : ");
+	}
+	/**
+	 * 从右下到左上 上半部分
+	 */
+	@Test
+	public void test_eraodicMatrix8() {
+		int[][] testMatrix = { { 1, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9 }, { 10, 11, 12 }, { 13, 14, 15 }, { 16, 17, 18 } };
+		String r1 = Main1.ergodicMatrix(testMatrix, 2, 65);
+		Assert.assertEquals(r1, "18,14,", "8r1 : ");
+		
+		String r2 = Main1.ergodicMatrix(testMatrix, 2, 66);
+		Assert.assertEquals(r2, "14,10,", "8r2 : ");
+		
+		String r3 = Main1.ergodicMatrix(testMatrix, 2, 67);
+		Assert.assertEquals(r3, "15,11,", "8r3 : ");
+		
+		String r4 = Main1.ergodicMatrix(testMatrix, 2, 68);
+		Assert.assertEquals(r4, "11,7,", "8r4 : ");
+	}
+	/**
+	 * 从右下到左上 下半部分
+	 */
+	@Test
+	public void test_eraodicMatrix9() {
+		int[][] testMatrix = { { 1, 2, 3, 4, 5, 6 }, { 7, 8, 9, 10, 11, 12 }, { 13, 14, 15, 16, 17, 18 } };
+		//上半部分
+		String r1 = Main1.ergodicMatrix(testMatrix, 2, 65);
+		Assert.assertEquals(r1, "18,11,", "9r1 : ");
+		
+		String r2 = Main1.ergodicMatrix(testMatrix, 2, 66);
+		Assert.assertEquals(r2, "11,4,", "9r2 : ");
+
+		String r3 = Main1.ergodicMatrix(testMatrix, 2, 67);
+		Assert.assertEquals(r3, "12,5,", "9r3 : ");
+		//下半部分
+		String r4 = Main1.ergodicMatrix(testMatrix, 2, 68);
+		Assert.assertEquals(r4, "17,10,", "9r4 : ");
+		
+		String r5 = Main1.ergodicMatrix(testMatrix, 2, 69);
+		Assert.assertEquals(r5, "10,3,", "9r5 : ");
+
+		String r6 = Main1.ergodicMatrix(testMatrix, 2, 70);
+		Assert.assertEquals(r6, "16,9,", "9r6 : ");
+
+		String r7 = Main1.ergodicMatrix(testMatrix, 2, 71);
+		Assert.assertEquals(r7, "9,2,", "9r7 : ");
+
+		String r8 = Main1.ergodicMatrix(testMatrix, 2, 72);
+		Assert.assertEquals(r8, "15,8,", "9r8 : ");
+
+		String r9 = Main1.ergodicMatrix(testMatrix, 2, 73);
+		Assert.assertEquals(r9, "8,1,", "9r9 : ");
+
+		String r10 = Main1.ergodicMatrix(testMatrix, 2, 74);
+		Assert.assertEquals(r10, "14,7,", "9r10 : ");
 	}
 
 }

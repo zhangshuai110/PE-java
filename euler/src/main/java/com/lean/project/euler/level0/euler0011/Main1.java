@@ -159,7 +159,48 @@ public class Main1 {
 				}
 			}
 		}
+		// 从右下到左上 上半部分
+		for (int x = matrix.length - 1; x >= 0; x--) {
+			exString = "";
+			exStringStep = 0;
+			int countBack = 0;
+			for (int i = x, j = matrix[0].length - 1; j >= 0 && i >= 0; i--, j--) {
+				exString += matrix[i][j];
+				exString += ",";
+				exStringStep++;
+				if (exStringStep == step) {
+					i = x - countBack;
+					j = matrix[0].length - 1 - countBack++;
+					if (++exCount == count) {
+						return exString;
+					}
+					exString = "";
+					exStringStep = 0;
+				}
+			}
 
+		}
+
+		// 从右下到左上 下半部分
+		for (int x = matrix[0].length - 2; x >= 0; x--) {
+			exString = "";
+			exStringStep = 0;
+			int countBack = 0;
+			for (int i = matrix.length - 1, j = x; j >= 0 && i >= 0; i--, j--) {
+				exString += matrix[i][j];
+				exString += ",";
+				exStringStep++;
+				if (exStringStep == step) {
+					i = matrix.length - 1 - countBack;
+					j = x - countBack++;
+					if (++exCount == count) {
+						return exString;
+					}
+					exString = "";
+					exStringStep = 0;
+				}
+			}
+		}
 		return null;
 
 	}
