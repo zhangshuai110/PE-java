@@ -38,6 +38,28 @@ public class Main1 {
 				}
 			}
 		}
+
+		// 从下到上
+		for (int j = 0; j < matrix[0].length; j++) {
+			exString = "";
+			int countBack = matrix.length - 1;
+			for (int i = countBack; i >= 0; i--) {
+				exString += matrix[i][j];
+				// System.out.print(i + " " + j + " [" + matrix[i][j] + "] ");
+				if (exString.length() == step) {
+					i = --countBack;
+					i++;
+
+					// System.out.println(exCount + " " + exString + " " + i + "
+					// " + j);
+					if (++exCount == count) {
+						return exString;
+					}
+					exString = "";
+				}
+			}
+			System.out.println("");
+		}
 		return null;
 
 	}
