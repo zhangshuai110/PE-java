@@ -33,7 +33,7 @@ public class Main1 {
 			exStringStep = 0;
 			int countBack = 0;
 			for (int i = countBack; i < matrix.length; i++) {
-//				System.out.println(j);
+				// System.out.println(j);
 				exString += matrix[i][j];
 				exString += ",";
 				exStringStep++;
@@ -53,58 +53,72 @@ public class Main1 {
 		}
 
 		// 从下到上
-		// for (int j = 0; j < matrix.length; j++) {
-		// exString = "";
-		// int countBack = matrix[0].length - 1;
-		// for (int i = countBack; i >= 0; i--) {
-		// exString += matrix[i][j];
-		// if (exString.length() == step) {
-		// i = --countBack;
-		// i++;
-		//
-		// if (++exCount == count) {
-		// return exString;
-		// }
-		// exString = "";
-		// }
-		// }
-		// }
+		for (int j = 0; j < matrix[0].length; j++) {
+			exString = "";
+			exStringStep = 0;
+			int countBack = matrix.length - 1;
+			for (int i = countBack; i >= 0; i--) {
+				// System.out.println(j);
+				exString += matrix[i][j];
+				exString += ",";
+				exStringStep++;
+				if (exStringStep == step) {
+					i = countBack--;
+					exCount++;
+					// 等于预期的个数，返回
+					if (exCount == count) {
+						return exString;
+					}
+					// 重新再来
+					exString = "";
+					exStringStep = 0;
+				}
+			}
+			// System.out.println(" ");
+		}
 
 		// 从左到右
-		// for (int i = 0; i < matrix[0].length; i++) {
-		// exString = "";
-		// int countBack = 0;
-		// for (int j = countBack; j < matrix.length; j++) {
-		// exString += matrix[i][j];
-		// if (exString.length() == step) {
-		// j = ++countBack;
-		// j--;
-		//
-		// if (++exCount == count) {
-		// return exString;
-		// }
-		// exString = "";
-		// }
-		// }
-		// }
+		for (int i = 0; i < matrix.length; i++) {
+			exString = "";
+			exStringStep = 0;
+			int countBack = 0;
+			for (int j = countBack; j < matrix[0].length; j++) {
+				exString += matrix[i][j];
+				exString += ",";
+				exStringStep++;
+				if (exStringStep == step) {
+					j = countBack++;
+
+					if (++exCount == count) {
+						return exString;
+					}
+					exString = "";
+					exStringStep = 0;
+				}
+			}
+		}
 
 		// // 从右到左
-		// for (int i = 0; i < matrix[0].length; i++) {
-		// exString = "";
-		// int countBack = matrix.length - 1;
-		// for (int j = countBack; j < matrix.length; j++) {
-		// exString += matrix[i][j];
-		// if (exString.length() == step) {
-		// j = ++countBack;
-		// j--;
-		//
-		// if (++exCount == count) {
-		// return exString;
-		// }
-		// exString = "";
-		// }
-		// }
-		// }
+		for (int i = 0; i < matrix.length; i++) {
+			exString = "";
+			exStringStep = 0;
+
+			int countBack = matrix[i].length - 1;
+			for (int j = countBack; j >= 0; j--) {
+				exString += matrix[i][j];
+				exString += ",";
+				exStringStep++;
+				if (exStringStep == step) {
+					j = countBack--;
+
+					if (++exCount == count) {
+						return exString;
+					}
+					exString = "";
+					exStringStep = 0;
+				}
+			}
+		}
 
 		return null;
 
