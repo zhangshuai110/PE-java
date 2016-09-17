@@ -45,20 +45,34 @@ public class Main1 {
 			int countBack = matrix.length - 1;
 			for (int i = countBack; i >= 0; i--) {
 				exString += matrix[i][j];
-				// System.out.print(i + " " + j + " [" + matrix[i][j] + "] ");
 				if (exString.length() == step) {
 					i = --countBack;
 					i++;
 
-					// System.out.println(exCount + " " + exString + " " + i + "
-					// " + j);
 					if (++exCount == count) {
 						return exString;
 					}
 					exString = "";
 				}
 			}
-			System.out.println("");
+		}
+
+		// 从左到右
+		for (int i = 0; i < matrix[0].length; i++) {
+			exString = "";
+			int countBack = 0;
+			for (int j = countBack; j < matrix.length; j++) {
+				exString += matrix[i][j];
+				if (exString.length() == step) {
+					j = ++countBack;
+					j--;
+
+					if (++exCount == count) {
+						return exString;
+					}
+					exString = "";
+				}
+			}
 		}
 		return null;
 
