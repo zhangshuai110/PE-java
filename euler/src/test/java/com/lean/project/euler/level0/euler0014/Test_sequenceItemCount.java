@@ -8,5 +8,7 @@ public class Test_sequenceItemCount {
 	public void test_sequenceItemCount() {
 		Assert.assertEquals(Main1.sequenceItemCount(1), 4);
 		Assert.assertEquals(Main1.sequenceItemCount(13), 10);
+		Assert.assertEquals(Main1.sequenceItemCount(113383), 248);
+		Assert.assertEquals(Main1.sequenceItemCount(1000000), 153);
 	}
 }
